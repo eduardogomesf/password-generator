@@ -1,3 +1,4 @@
+import { Generator } from "./components/generator";
 import { PasswordBox } from "./components/passsword-box";
 
 export default function Home() {
@@ -11,6 +12,8 @@ export default function Home() {
         </h1>
 
         <PasswordBox password="12345" />
+
+        <Generator />
       </main>
     </div>
   )

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
     "lucide-react": "^0.291.0",
     "next": "14.0.1",
     "react": "18",

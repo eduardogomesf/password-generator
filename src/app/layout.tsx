@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={jetBrainsMono.className}>{children}</body>
+      <body className={jetBrainsMono.className}>
+        {children}
+      </body>
     </html>
   )
 }

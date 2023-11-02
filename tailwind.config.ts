@@ -16,7 +16,8 @@ const config: Config = {
         "neon-green": "#A4FFAF",
         "red": "#F64A4A",
         "orange": "#FB7C58",
-        "yellow":"#F8CD65"
+        "yellow":"#F8CD65",
+        "almost-black":"#08070B"
       }
     },
   },

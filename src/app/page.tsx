@@ -1,3 +1,5 @@
+import { PasswordBox } from "./components/passsword-box";
+
 export default function Home() {
   return (
     <div className="w-full h-screen pt-16 bg-almost-black">
@@ -8,6 +10,7 @@ export default function Home() {
           Password generator
         </h1>
 
+        <PasswordBox password="12345" />
       </main>
     </div>
   )

@@ -21,7 +21,7 @@ export function LengthController({ value, onChange }: LengthControllerProps) {
         className='relative flex items-center w-full h-[20px] select-none	touch-none'
         value={value}
         onValueChange={onChange}
-        max={20}
+        max={15}
         min={1}
         step={1}
       >

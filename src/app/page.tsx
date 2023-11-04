@@ -1,5 +1,6 @@
 'use client'
 
+import generator from 'generate-password'
 import { useState } from "react";
 import { Generator } from "./components/generator";
 import { PasswordBox } from "./components/passsword-box";
@@ -18,6 +19,20 @@ export default function Home() {
   const [password, setPassword] = useState('');
   const [level, setLevel] = useState<Level>('1');
 
+  function generatePassword(params: GenerateParams) {
+    const isAllUnchecked = !params.includeUppercase && !params.includeLowercase && !params.includeNumbers && !params.includeSymbols;
+
+    let password = generator.generate({
+      length: params.length,
+      uppercase: params.includeUppercase,
+      lowercase: isAllUnchecked ? true : params.includeLowercase,
+      numbers: params.includeNumbers,
+      symbols: params.includeSymbols,
+    })
+
+    setPassword(password)
+  }
+
   function calculatePoints(params: GenerateParams) {
     let points = 0;
 
@@ -28,11 +43,11 @@ export default function Home() {
 
     if (params.length >= 6 && params.length <= 8) { points += 1 };
 
-    if (params.length >= 9 && params.length <= 12) { points += 2 };
+    if (params.length >= 9 && params.length <= 11) { points += 2 };
 
-    if (params.length >= 13 && params.length <= 16) { points += 3 };
+    if (params.length >= 12 && params.length <= 13) { points += 3 };
 
-    if (params.length >= 17 && params.length <= 20) { points += 4 };
+    if (params.length >= 14 && params.length <= 15) { points += 4 };
 
     return points
   }
@@ -50,7 +65,7 @@ export default function Home() {
       setLevel('4')
     }
 
-    setPassword('123456')
+    generatePassword(params)
   }
 
   return (

@@ -11,7 +11,9 @@ export default function Home() {
           Password generator
         </h1>
 
-        <PasswordBox password="12345" />
+        <PasswordBox
+          password=""
+        />
 
         <Generator />
       </main>

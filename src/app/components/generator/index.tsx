@@ -4,9 +4,10 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Checkbox } from "./Checkbox";
 import { LengthController } from "./LengthController";
+import { StrengthMeasurer } from "./StrengthMeasurer";
 
 export function Generator() {
-  const [length, setLength] = useState([1]);
+  const [length, setLength] = useState([10]);
   const [includeUppercase, setIncludeUppercase] = useState(false);
   const [IncludeLowercase, setIncludeLowercase] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
@@ -48,6 +49,10 @@ export function Generator() {
           onCheckedChange={setIncludeSymbols}
         />
       </div>
+
+      <StrengthMeasurer
+        level={'4'}
+      />
 
       <button
         className="

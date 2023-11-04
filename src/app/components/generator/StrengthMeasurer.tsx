@@ -3,8 +3,6 @@ import { tv } from "tailwind-variants";
 type Level = '1' | '2' | '3' | '4';
 
 interface LevelBarProps {
-  bgColor?: string;
-  borderColor?: string;
   level: Level;
 }
 

@@ -5,11 +5,17 @@ import { ArrowRight } from "lucide-react";
 import { Checkbox } from "./Checkbox";
 import { LengthController } from "./LengthController";
 import { StrengthMeasurer } from "./StrengthMeasurer";
+import { GenerateParams, Level } from "../../page";
 
-export function Generator() {
+interface GeneratorProps {
+  onGenerate: (params: GenerateParams) => void;
+  level: Level;
+}
+
+export function Generator({ onGenerate, level }: GeneratorProps) {
   const [length, setLength] = useState([10]);
   const [includeUppercase, setIncludeUppercase] = useState(false);
-  const [IncludeLowercase, setIncludeLowercase] = useState(false);
+  const [includeLowercase, setIncludeLowercase] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
   const [includeSymbols, setIncludeSymbols] = useState(false);
 
@@ -31,7 +37,7 @@ export function Generator() {
         <Checkbox
           id="include-lowercase"
           label="Include Lowercase Letters"
-          checked={IncludeLowercase}
+          checked={includeLowercase}
           onCheckedChange={setIncludeLowercase}
         />
 
@@ -51,7 +57,7 @@ export function Generator() {
       </div>
 
       <StrengthMeasurer
-        level={'4'}
+        level={level}
       />
 
       <button
@@ -60,6 +66,14 @@ export function Generator() {
           uppercase text-base text-dark-grey font-bold md:text-lg
           flex items-center justify-center gap-4
         "
+        type="button"
+        onClick={() => onGenerate({
+          length: length[0],
+          includeLowercase,
+          includeNumbers,
+          includeSymbols,
+          includeUppercase,
+        })}
       >
         Generate
         <ArrowRight

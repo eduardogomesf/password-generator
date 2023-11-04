@@ -1,6 +1,5 @@
 import { tv } from "tailwind-variants";
-
-type Level = '1' | '2' | '3' | '4';
+import { Level } from "../../page";
 
 interface LevelBarProps {
   level: Level;

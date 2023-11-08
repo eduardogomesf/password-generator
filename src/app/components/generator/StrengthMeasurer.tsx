@@ -19,7 +19,7 @@ const levelStyles = tv({
   }
 })
 
-function LevelBars({ level }: LevelBarProps) {
+export function LevelBars({ level }: LevelBarProps) {
   const arrayFromLevel = Array.from({ length: 4 });
 
   return (
@@ -27,6 +27,7 @@ function LevelBars({ level }: LevelBarProps) {
       {arrayFromLevel.map((_, index) => (
         <div
           key={index}
+          data-testid='level-bar'
           className={levelStyles({ level: index + 1 <= Number(level) ? level : 'empty' })}
         />
       ))}

@@ -1,7 +1,6 @@
-// Import necessary testing utilities and the components
 import React from 'react';
 import { render } from '@testing-library/react';
-import { LevelBars, StrengthMeasurer } from '../src/app/components/generator/StrengthMeasurer'; // Update with the correct path
+import { LevelBars, StrengthMeasurer } from '../../../src/app/components/generator/StrengthMeasurer';
 
 describe('LevelBars', () => {
   it('should render 4 bars', () => {

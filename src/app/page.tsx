@@ -3,7 +3,7 @@
 import generator from 'generate-password'
 import { useState } from "react";
 import { Generator } from "./components/generator";
-import { PasswordBox } from "./components/passsword-box";
+import { PasswordBox } from "./components/PasswordBox";
 
 export type Level = '1' | '2' | '3' | '4';
 

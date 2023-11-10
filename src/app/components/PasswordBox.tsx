@@ -24,6 +24,7 @@ export function PasswordBox({ password }: PasswordBoxProps) {
         disabled={true}
         placeholder="P4$5W0rD!"
         value={password}
+        data-testid='password-box-input'
       />
       <div className="flex items-center gap-4">
         <span className={`text-lg text-neon-green uppercase font-bold ${isCopied ? 'opacity-100' : 'opacity-0'}`}>
@@ -33,6 +34,7 @@ export function PasswordBox({ password }: PasswordBoxProps) {
           onClick={handleCopy}
           type="button"
           className="cursor-pointer bg-transparent text-neon-green duration-150 hover:text-almost-white"
+          data-testid='password-box-copy-button'
         >
           <Copy className="w-6 h-6" />
         </button>
